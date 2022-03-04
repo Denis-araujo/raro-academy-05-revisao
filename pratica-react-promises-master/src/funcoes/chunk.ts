@@ -12,5 +12,13 @@
  * @returns 
  */
 export const chunk = (valores: number[], tamanho: number): number[][] => {
-  return null;
+  let a: number[][]
+
+    a = valores.reduce((acumulador, item, indice) => {
+    let grupo = Math.floor(indice / tamanho);
+    acumulador[grupo] = [...(acumulador[grupo] || []), item];
+    return acumulador;
+  }, [])
+
+  return a
 };
