@@ -6,7 +6,7 @@ import { uniq } from "./funcoes/uniq";
 import { consumirDaFila, escreveNaFila, leArquivo, zerarAquivo } from "./funcoes/fila";
 
 
-function testChunk() {
+/* function testChunk() {
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const original = [...items];
 
@@ -23,7 +23,7 @@ function testChunk() {
   console.assert(chunked[1].length === 3, 'segundo grupo deve ter 3 itens');
   console.assert(chunked[2].length === 3, 'terceiro grupo deve ter 3 itens');
   console.assert(chunked[3].length === 1, 'quarto grupo deve ter 1 item');
-}
+} */
 
 function testCompact() {
   const items = [0, 1, false, 2, '', 3, null, undefined, '0'];
@@ -44,7 +44,7 @@ function testCompact() {
   console.assert(resultadoCorreto, 'todos os objetos esperados devem estar presentes');
 }
 
-function testFromPairs() {
+/* function testFromPairs() {
   const items: KeyAndValue[] = [
     ['name', 'Edgar Allan Poe'],
     ['age', 40],
@@ -108,10 +108,10 @@ async function testFila() {
     console.log(encontrada);
     console.assert(encontrada === menssagem, 'mensagem esperada não encontrada');
   }
-}
+} */
 
-testChunk();
+/* testChunk(); */
 testCompact();
-testFromPairs();
+/* testFromPairs();
 testUniq();
-testFila();
+testFila(); */
