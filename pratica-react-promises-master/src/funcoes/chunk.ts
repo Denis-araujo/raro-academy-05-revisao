@@ -20,5 +20,5 @@ export const chunk = (valores: number[], tamanho: number): number[][] => {
     return acumulador;
   }, [])
 
-  return a
+  return a;
 };
