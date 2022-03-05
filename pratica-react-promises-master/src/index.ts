@@ -45,7 +45,7 @@ import { /* consumirDaFila, escreveNaFila, */ leArquivo, zerarAquivo } from "./f
   console.assert(resultadoCorreto, 'todos os objetos esperados devem estar presentes');
 } */
 
-function testFromPairs() {
+/* function testFromPairs() {
   const items: KeyAndValue[] = [
     ['name', 'Edgar Allan Poe'],
     ['age', 40],
@@ -64,7 +64,7 @@ function testFromPairs() {
   // verificação do método.
   const correto = Object.keys(esperado).every(key => esperado[key] === resultado[key]);
   console.assert(correto, 'todos os objetos esperados devem estar presentes');
-}
+} */
 
 /* function testUniq() {
   const items = [1, 2, 3, 4, 5, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6];
@@ -115,5 +115,5 @@ function testFromPairs() {
 /* testChunk();
 testCompact(); */
 testFromPairs();
-/* testUniq(); */
+testUniq();
 /* testFila(); */
