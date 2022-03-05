@@ -9,13 +9,13 @@
  * @returns somente os itens definidos.
  */
  export const compact = (items: unknown[]): unknown[] => {
-  let a = []
+  let resultado = []
   for(let item of items){
     if(Boolean(item) == true){
 
-      a.push(item)
+      resultado.push(item)
     }
   }
 
-  return a;
+  return resultado;
 };
