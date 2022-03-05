@@ -17,37 +17,43 @@ const ARQUIVO_DE_FILA = `${resolve('.')}/files/fila.txt`;
  */
 
 export async function zerarAquivo(): Promise<void> {
-  return escreveArquivo('', () => {});
+  await escreveArquivo('')
 }
 
-export async function leArquivo(callback): Promise<string> {
-  readFile(ARQUIVO_DE_FILA, 'utf8', (err, resultado) => {
-    if (err) {
-      callback(err, null);
-    }
+export async function leArquivo(): Promise<string> {
+  return new Promise((res, rej) => {
 
-    callback(null, resultado);
-  });
+    readFile(ARQUIVO_DE_FILA, 'utf8', (err, resultado) => {
+      if (err) {
+        rej(err);
+      }
+  
+      res(resultado);
+    });
+  })
 
   // reste return está presente somente para cumprir a saída de Promise<string>
-  return '';
+  //return '';
 }
 
-export async function escreveArquivo(texto: string, callback): Promise<void> {
-  writeFile(ARQUIVO_DE_FILA, texto, 'utf8', function(err) {
-    if (err) {
-      return callback(err, null);
-    }
+export async function escreveArquivo(texto: string): Promise<void> {
+  return new Promise((res, rej) => {
 
-    callback();
-  });
+    writeFile(ARQUIVO_DE_FILA, texto, 'utf8', function(err) {
+      if (err) {
+        return rej(err);
+      }
+  
+      res();
+    });
+  })
 }
-
+/* 
 export async function escreveNaFila(texto: string): Promise<void> {
-  leArquivo(function(error, textoAtual) {
+  await leArquivo(function(error, textoAtual) {
     if (error) {
       console.log(error);
-      return;
+      //return;
     }
 
     console.log('texto encontrado anteriormente no arquivo', textoAtual);
@@ -63,8 +69,8 @@ export async function escreveNaFila(texto: string): Promise<void> {
     })
   });
 }
-
-export async function consumirDaFila(): Promise<string> {
+ */
+/* export async function consumirDaFila(): Promise<string> {
   leArquivo(function(error, textoAtual) {
     if (error) {
       console.log(error);
@@ -87,3 +93,4 @@ export async function consumirDaFila(): Promise<string> {
 
   return '';
 }
+ */
