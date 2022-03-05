@@ -3,10 +3,10 @@ import { chunk } from "./funcoes/chunk";
 import { compact } from "./funcoes/compact";
 import { fromPairs } from "./funcoes/fromPairs";
 import { uniq } from "./funcoes/uniq";
-import { consumirDaFila, escreveNaFila, leArquivo, zerarAquivo } from "./funcoes/fila";
+import { /* consumirDaFila, escreveNaFila, */ leArquivo, zerarAquivo } from "./funcoes/fila";
 
 
-function testChunk() {
+/* function testChunk() {
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const original = [...items];
 
@@ -23,9 +23,10 @@ function testChunk() {
   console.assert(chunked[1].length === 3, 'segundo grupo deve ter 3 itens');
   console.assert(chunked[2].length === 3, 'terceiro grupo deve ter 3 itens');
   console.assert(chunked[3].length === 1, 'quarto grupo deve ter 1 item');
-}
+} */
 
-function testCompact() {
+
+/* function testCompact() {
   const items = [0, 1, false, 2, '', 3, null, undefined, '0'];
   const original = [...items];
   const expected = [1, 2, 3, '0'];
@@ -42,7 +43,7 @@ function testCompact() {
   // verificação do método.
   console.assert(naoAlterados, 'array original não pode ser alterado');
   console.assert(resultadoCorreto, 'todos os objetos esperados devem estar presentes');
-}
+} */
 
 function testFromPairs() {
   const items: KeyAndValue[] = [
@@ -58,13 +59,14 @@ function testFromPairs() {
 
   // chamada ao método.
   const resultado = fromPairs(items);
+  console.log(resultado)
 
   // verificação do método.
   const correto = Object.keys(esperado).every(key => esperado[key] === resultado[key]);
   console.assert(correto, 'todos os objetos esperados devem estar presentes');
 }
 
-function testUniq() {
+/* function testUniq() {
   const items = [1, 2, 3, 4, 5, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6];
   const original = [...items];
   const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
@@ -76,9 +78,9 @@ function testUniq() {
   const resultadoCorreto = expected.every((item, index) => item === resultado[index]);
   console.assert(naoAlterados, 'array original não pode ser alterado');
   console.assert(resultadoCorreto, 'todos os objetos esperados devem estar presentes');
-}
+} */
 
-async function testFila() {
+/* async function testFila() {
   await zerarAquivo();
   const mensagens = [
     'Lorem ipsum dolor sit amet',
@@ -108,10 +110,10 @@ async function testFila() {
     console.log(encontrada);
     console.assert(encontrada === menssagem, 'mensagem esperada não encontrada');
   }
-}
+} */
 
-testChunk();
-testCompact();
+/* testChunk();
+testCompact(); */
 testFromPairs();
-testUniq();
-testFila();
+/* testUniq(); */
+/* testFila(); */
