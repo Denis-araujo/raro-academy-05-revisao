@@ -25,7 +25,7 @@ function testChunk() {
   console.assert(chunked[3].length === 1, 'quarto grupo deve ter 1 item');
 }
 
-/* function testCompact() {
+function testCompact() {
   const items = [0, 1, false, 2, '', 3, null, undefined, '0'];
   const original = [...items];
   const expected = [1, 2, 3, '0'];
@@ -108,10 +108,10 @@ async function testFila() {
     console.log(encontrada);
     console.assert(encontrada === menssagem, 'mensagem esperada não encontrada');
   }
-} */
+}
 
 testChunk();
-/* testCompact();
+testCompact();
 testFromPairs();
 testUniq();
-testFila(); */
+testFila();
